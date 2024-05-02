@@ -1,10 +1,24 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      python: 3.8
   pre_build:
     commands:
-      - docker build -t helloworld .
+      - echo Logging in to Amazon ECR...
+      - aws --version
+      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
   build:
     commands:
-      - docker images
-      - docker run helloworld echo "Hello, World!" 
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t helloworld .
+      - echo Build completed on `date`
+  post_build:
+    commands:
+      - echo Pushing the Docker image to ECR...
+      - docker tag helloworld:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/helloworld:latest
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/helloworld:latest
+      - echo Image push completed on `date`
+ 
