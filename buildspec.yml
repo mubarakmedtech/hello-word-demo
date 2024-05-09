@@ -28,5 +28,8 @@ phases:
       - echo Image push completed on `date`
 artifacts:
   files:
-    - ./
+    - app.py
+    - buildspec.yml
+    - requirements.txt
+    - Dockerfile
  
