@@ -12,6 +12,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - echo "dckr_pat_zHVYTj8-qmzznpedrvOdyePhw30" | docker login --username mubarakmadtech --password-stdin
       - echo Building the Docker image...
       - docker build -t helloworld .
       - echo Build completed on `date`
