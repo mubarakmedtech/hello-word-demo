@@ -8,18 +8,22 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws --version
-      - aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com
+      # - aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION
   build:
     commands:
       - echo Build started on `date`
       - echo "dckr_pat_zHVYTj8-qmzznpedrvOdyePhw30" | docker login --username mubarakmadtech --password-stdin
       - echo Building the Docker image...
-      - docker build -t helloworld .
+      - docker build -t apple-model-dev .
+      # - docker tag apple-model-dev:latest 899215365409.dkr.ecr.us-east-1.amazonaws.com/apple-model-dev:latest
+      # - docker build -t helloworld .
       - echo Build completed on `date`
   post_build:
     commands:
       - echo Pushing the Docker image to ECR...
-      - docker tag helloworld:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/helloworld:latest
-      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/helloworld:latest
+      - docker tag apple-model-dev:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/apple-model-dev:latest
+      # - docker tag helloworld:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/helloworld:latest
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/apple-model-dev:latest
       - echo Image push completed on `date`
  
