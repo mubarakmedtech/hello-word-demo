@@ -13,7 +13,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t helloworld .
+      #- docker build -t helloworld .
       - echo Build completed on `date`
   post_build:
     commands:
