@@ -26,4 +26,7 @@ phases:
       # - docker tag helloworld:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/helloworld:latest
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/apple-model-dev:latest
       - echo Image push completed on `date`
+artifacts:
+  files:
+    - ./
  
