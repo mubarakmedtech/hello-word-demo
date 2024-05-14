@@ -3,7 +3,7 @@ os: linux
 
 files:
   - source: /
-    desctination: /var/www/html/demo-app
+    destination: /var/www/html/demo-app
 
 hooks:
   BeforeInstall:
