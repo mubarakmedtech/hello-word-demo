@@ -1,6 +1,10 @@
 version: 0.0
 os: linux
 
+files:
+  - source: /
+    desctination: /var/www/html/demo-app
+
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh

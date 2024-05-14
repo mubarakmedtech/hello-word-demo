@@ -2,7 +2,7 @@
 set -e
 
 # Navigate to your Flask application directory
-#cd /path/to/your/flask/app
+cd /var/www/html/demo-app
 
 # Install Python dependencies
 pip install -r requirements.txt

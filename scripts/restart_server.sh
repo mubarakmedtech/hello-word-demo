@@ -2,7 +2,7 @@
 set -e
 
 # Navigate to your Flask application directory
-#cd /path/to/your/flask/app
+cd /var/www/html/demo-app
 
 # Restart the Flask server
 pkill -f 'python app.py' || true
