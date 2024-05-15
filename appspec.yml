@@ -1,6 +1,14 @@
 version: 0.0
 os: linux
 
+permissions:
+  - object: /var/www/html/demo-app
+    pattern: "**"
+    mode: 755
+    type:
+      - directory
+      - file
+
 files:
   - source: /
     destination: /var/www/html/demo-app
