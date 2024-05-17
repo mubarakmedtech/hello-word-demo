@@ -3,6 +3,9 @@
 set -e
 
 echo "Current working directory: $(pwd)"
+echo "Deployment Group id: $DEPLOYMENT_GROUP_ID"
+echo "Deployment id: $DEPLOYMENT_ID"
+echo "Deployment root directory: $DEPLOYMENT_ROOT"
 
 # Change to the deployment root directory
 cd $DEPLOYMENT_ROOT
