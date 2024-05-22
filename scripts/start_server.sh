@@ -5,5 +5,5 @@ set -e
 cd /var/www/html/demo-app
 
 # Start the Flask server in the background
-nohup python app.py > /dev/null 2>&1 &
+nohup python3 app.py > /dev/null 2>&1 &
 
