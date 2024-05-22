@@ -6,7 +6,7 @@ set -e
 response=$(curl -sS http://localhost:8080/)
 
 # Check if the response contains an expected string indicating the service is healthy
-if [[ "$response" == *"OK"* ]]; then
+if [[ "$response" == *"Hello"* ]]; then
     echo "Service validation successful"
     exit 0
 else
