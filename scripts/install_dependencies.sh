@@ -14,6 +14,8 @@ echo "Deployment root directory: $(pwd)"
 echo "Source path: $(ls -lah)"
 
 # Navigate to your Flask application directory
+cd /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/deployment-archive
+cp -R . /var/www/html/demo-app
 cd /var/www/html/demo-app
 
 echo "Current working directory: $(pwd)"
