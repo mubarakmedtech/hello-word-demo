@@ -3,7 +3,7 @@ set -e
 
 # Perform health check on the Flask application
 # Example: Send a request to a health check endpoint
-response=$(curl -sS http://localhost:5000/health)
+response=$(curl -sS http://localhost:8080/)
 
 # Check if the response contains an expected string indicating the service is healthy
 if [[ "$response" == *"OK"* ]]; then
