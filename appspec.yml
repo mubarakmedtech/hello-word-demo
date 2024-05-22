@@ -12,6 +12,9 @@ permissions:
 files:
   - source: /
     destination: /var/www/html/demo-app
+    overwrite: true
+    
+file_exists_behavior: OVERWRITE
 
 hooks:
   BeforeInstall:
